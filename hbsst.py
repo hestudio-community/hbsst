@@ -35,7 +35,7 @@ def submit(config=None, url=None):
     time.sleep(2)
     curl_return_json.close()
     time.sleep(1)
-    curl_return_data = json.load(curl_return)
+    curl_return_data = json.load(open("hbsst_return.json"))
     if curl_return_data["success"]:
         print("成功推送的url条数：", curl_return_data["success"])
     if curl_return_data["remain"]:
