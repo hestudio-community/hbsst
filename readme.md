@@ -12,19 +12,19 @@
 ### 使用方法
 1. 首次使用
 
-    1.1. 你的设备需要安装Python 3，wget
+1.1. 你的设备需要安装Python 3，wget
 
-    1.2. 下载主文件到工作文件夹
+1.2. 下载主文件到工作文件夹
 
 ```
 wget -O https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/hbsst.py
 ```
 
-    1.3. 在工作目录创建预设
+1.3. 在工作目录创建预设
 
-        1.3.1. 新建 hbsst_config.json 文件
+1.3.1. 新建 hbsst_config.json 文件
 
-        1.3.2. 写入预设
+1.3.2. 写入预设
 
 ```json
 {
