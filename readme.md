@@ -12,19 +12,19 @@
 ### 使用方法
 1. 首次使用
 
-1.1. 你的设备需要安装Python 3，wget
+    1.1. 你的设备需要安装Python 3，wget
 
-1.2. 下载主文件到工作文件夹
+    1.2. 下载主文件到工作文件夹
 
 ```
 wget -O https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/hbsst.py
 ```
 
-1.3. 在工作目录创建预设
+    1.3. 在工作目录创建预设
 
-1.3.1 新建 hbsst_config.json 文件
+        1.3.1. 新建 hbsst_config.json 文件
 
-1.3.2 写入预设
+        1.3.2. 写入预设
 
 ```json
 {
@@ -40,7 +40,7 @@ wget -O https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/hbsst
 }
 ```
 
-1.4. 调用方法
+2. 调用方法
 
 例如：
 
@@ -55,6 +55,6 @@ python3 -c "import hbsst;hbsst.submit(config='demo', url='https://www.example.co
 python3 -c "import hbsst;hbsst.submit(config='demo', url='https://www.example.com/1.html\nhttps://www.example.com/1.html')"
 ```
 
-1.5. 获取返回结果
+3. 获取返回结果
 
 返回结果会保存在 `hbsst_return.json` 内，在执行命令是结果会直接输出人类可以看懂的文字。开发者可以通过获取success或error的存在状态来判断是否成功提交，可以通过获取error的值来获取错误码。有关 `hbsst_return.json` 的内容结构，你可以访问 https://ziyuan.baidu.com/linksubmit/index 获取。
