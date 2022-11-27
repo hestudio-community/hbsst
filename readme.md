@@ -52,7 +52,7 @@ python3 -c "import hbsst;hbsst.submit(config='demo', url='https://www.example.co
 
 例如：
 ```
-python3 -c "import hbsst;hbsst.submit(config='demo', url='https://www.example.com/1.html\nhttps://www.example.com/1.html')"
+python3 -c "import hbsst;hbsst.submit(config='demo', url='https://www.example.com/1.html\nhttps://www.example.com/2.html')"
 ```
 
 3. 获取返回结果
