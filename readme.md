@@ -17,7 +17,7 @@
 1.2. 下载主文件到工作文件夹
 
 ```
-wget -O https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/hbsst.py
+wget -O hbsst.py https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/hbsst.py
 ```
 
 1.3. 在工作目录创建预设
