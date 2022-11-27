@@ -3,7 +3,7 @@ import os
 import json
 import time
 
-def submit(self, config=None, url=None):
+def submit(config=None, url=None):
     if config == None:
         print("请传入预设方案！")
         sys.exit()
