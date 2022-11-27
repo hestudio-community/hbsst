@@ -36,16 +36,16 @@ def submit(config=None, url=None):
     curl_return_json.close()
     time.sleep(1)
     curl_return_data = json.load(open("hbsst_return.json"))
-    if curl_return_data["success"]:
+    if "success" in curl_return_data:
         print("成功推送的url条数：", curl_return_data["success"])
-    if curl_return_data["remain"]:
+    if "remain" in curl_return_data:
         print("当天剩余的可推送url条数：", curl_return_data["remain"])
-    if curl_return_data["not_same_site"]:
+    if "not_same_site" in curl_return_data:
         print("由于不是本站url而未处理的url列表：", curl_return_data["not_same_site"])
-    if curl_return_data["not_valid"]:
+    if "not_valid" in curl_return_data:
         print("不合法的url列表：", curl_return_data["not_valid"])
-    if curl_return_data["error"]:
+    if "error" in curl_return_data:
         print("错误码：", curl_return_data["error"])
-    if curl_return_data["message"]:
+    if "message" in curl_return_data:
         print("错误描述：", curl_return_data["message"])
     
