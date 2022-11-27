@@ -11,10 +11,10 @@ class main:
         if url == None:
             print("请传入需要提交的url！")
             sys.exit()
-        if not os.path.exists(str("config.json")):
+        if not os.path.exists(str("hbsst_config.json")):
             print("未找到配置文件！")
             sys.exit()
-        config_db = json.load(open(str("config.json")))
+        config_db = json.load(open(str("hbsst_config.json")))
         if not config_db[config]:
             print("未找到预设方案！")
             sys.exit()
@@ -29,7 +29,7 @@ class main:
         curl_return = os.popen(str("curl -H 'Content-Type:text/plain' --data-binary @urls.txt "+repr(config_db[config])))
         time.sleep(2)
         print("正在接收返回结果\n")
-        curl_return_json = open("return.json", mode = 'w')
+        curl_return_json = open("hbsst_return.json", mode = 'w')
         time.sleep(1)
         curl_return_json.write(curl_return)
         time.sleep(2)
@@ -49,3 +49,5 @@ class main:
         if curl_return_data["message"]:
             print("错误描述：", curl_return_data["message"])
         
+
+    def 
