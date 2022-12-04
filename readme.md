@@ -2,7 +2,7 @@
 
 本工具将百度站长API提交的命令集成优化，改成利于使用的Python函数，方便程序调用。
 
-本工具由heStudio开发，你可以通过 https://www.hestudio.xyz/ 前往heStudio博客。
+本工具由heStudio开发，你可以通过 https://www.hestudio.org/ 前往heStudio博客。
 
 ### 结构
 - `hbsst.py` (主程序)
