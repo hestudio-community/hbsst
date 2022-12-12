@@ -3,7 +3,31 @@ import os
 import json
 import time
 
+SCRIPT_VERSION=202212122125
+
+def check():
+    print("""
+heStudio 百度搜索提交助手
+
+作者：醉、倾城
+博客：https://www.hestudio.org
+
+(C)Copyright heStudio 2021-2022
+    """)
+    get_version = os.popen(str("curl https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/version.json"))
+    new_ver = json.load(get_version)
+    if not new_ver["version"] = SCRIPT_VERSION:
+        if SCRIPT_VERSION in new_ver["version"]:
+            print("你所使用的版本为旧版本，请及时更新，避免影响你的业务。")
+            print("更新代码： “wget -O hbsst.py https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/hbsst.py”\n")
+            time.sleep(5)
+        else:
+            print("你所使用的版本过于老旧，请更新。")
+            print("更新代码： “wget -O hbsst.py https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/hbsst.py”")
+            sys.exit()
+
 def submit(config=None, url=None):
+    check()
     if config == None:
         print("请传入预设方案！")
         sys.exit()
@@ -48,4 +72,8 @@ def submit(config=None, url=None):
         print("错误码：", curl_return_data["error"])
     if "message" in curl_return_data:
         print("错误描述：", curl_return_data["message"])
-    
+
+if __name__ == "main":
+    check()
+    print("请通过函数调用")
+    sys.exit()
