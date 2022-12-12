@@ -3,7 +3,7 @@ import os
 import json
 import time
 
-SCRIPT_VERSION=202212122125
+SCRIPT_VERSION=202212122135
 
 def check():
     print("""
@@ -65,9 +65,13 @@ def submit(config=None, url=None):
     if "remain" in curl_return_data:
         print("当天剩余的可推送url条数：", curl_return_data["remain"])
     if "not_same_site" in curl_return_data:
-        print("由于不是本站url而未处理的url列表：", curl_return_data["not_same_site"])
+        print("由于不是本站url而未处理的url列表：", "\n")
+        for not_same in curl_return_data["not_same_site"]:
+            print("- ", not_same)
     if "not_valid" in curl_return_data:
-        print("不合法的url列表：", curl_return_data["not_valid"])
+        print("不合法的url列表：", "\n")
+        for not_valid in curl_return_data["not_valid"]:
+            print("- ", not_valid)
     if "error" in curl_return_data:
         print("错误码：", curl_return_data["error"])
     if "message" in curl_return_data:
