@@ -3,7 +3,7 @@ import os
 import json
 import time
 
-SCRIPT_VERSION=202212122135
+SCRIPT_VERSION=202212122148
 
 def check():
     print("""
@@ -16,7 +16,7 @@ heStudio 百度搜索提交助手
     """)
     get_version = os.popen(str("curl https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/version.json"))
     new_ver = json.load(get_version)
-    if not new_ver["version"] = SCRIPT_VERSION:
+    if not new_ver["version"] == SCRIPT_VERSION:
         if SCRIPT_VERSION in new_ver["version"]:
             print("你所使用的版本为旧版本，请及时更新，避免影响你的业务。")
             print("更新代码： “wget -O hbsst.py https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/hbsst.py”\n")
