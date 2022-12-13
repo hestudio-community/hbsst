@@ -3,7 +3,7 @@ import os
 import json
 import time
 
-SCRIPT_VERSION="202212130930"
+SCRIPT_VERSION="202212130932"
 
 def check():
     print("""
@@ -81,8 +81,3 @@ def submit(config=None, url=None):
         print("错误码：", curl_return_data["error"])
     if "message" in curl_return_data:
         print("错误描述：", curl_return_data["message"])
-
-if __name__ == "main":
-    check()
-    print("请通过函数调用")
-    sys.exit()
