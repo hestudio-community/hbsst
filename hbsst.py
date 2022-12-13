@@ -3,7 +3,7 @@ import os
 import json
 import time
 
-SCRIPT_VERSION=202212130922
+SCRIPT_VERSION="202212130930"
 
 def check():
     print("""
