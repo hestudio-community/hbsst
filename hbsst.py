@@ -3,7 +3,7 @@ import os
 import json
 import time
 
-SCRIPT_VERSION="202212141508"
+SCRIPT_VERSION="202212141510"
 
 class main:
     def __init__(self, config=None, url=None):
@@ -45,7 +45,7 @@ heStudio 百度搜索提交助手
             print("未找到配置文件！")
             sys.exit()
         config_db = json.load(open(str("hbsst_config.json")))
-        if not config_db[config]:
+        if not config_db[self.config]:
             print("未找到预设方案！")
             sys.exit()
         print("正在保存url...")
