@@ -3,7 +3,7 @@ import os
 import json
 import time
 
-SCRIPT_VERSION="202212141503"
+SCRIPT_VERSION="202212141508"
 
 class main:
     def __init__(self, config=None, url=None):
@@ -85,7 +85,7 @@ heStudio 百度搜索提交助手
             print("错误描述：", curl_return_data["message"])
 
 def submit(config=None, url=None):
-    submit_data = main(config=None, url=None)
+    submit_data = main(config, url)
     submit_data.submit()
 
 if __name__ == "__main__":
