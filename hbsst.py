@@ -5,7 +5,7 @@ import time
 
 SCRIPT_VERSION="202212141458"
 
-class submit:
+class main:
     def __init__(self, config=None, url=None):
         self.config = config
         self.url = url
