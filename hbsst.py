@@ -3,9 +3,9 @@ import os
 import json
 import time
 
-SCRIPT_VERSION="202212141346"
+SCRIPT_VERSION="202212141410"
 
-class __name__:
+class main:
     def __init__(self):
         print("""
     heStudio 百度搜索提交助手
@@ -82,3 +82,9 @@ class __name__:
         if "message" in curl_return_data:
             print("错误描述：", curl_return_data["message"])
 
+def submit(config=None, url=None):
+    main.submit(config=None, url=None)
+
+if __name__ == "__main__":
+    main()
+    print("请通过函数调用！")
