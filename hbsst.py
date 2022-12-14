@@ -3,10 +3,12 @@ import os
 import json
 import time
 
-SCRIPT_VERSION="202212141410"
+SCRIPT_VERSION="202212141458"
 
 class main:
-    def __init__(self):
+    def __init__(self, config=None, url=None):
+        self.config = config
+        self.url = url
         print("""
     heStudio 百度搜索提交助手
 
@@ -30,13 +32,13 @@ class main:
                 print("更新代码： “wget -O hbsst.py https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/hbsst.py”")
                 sys.exit()
 
-    def submit(self, config=None, url=None):
+    def submit(self):
         print("正在读取预设方案...")
-        if not config:
+        if not self.config:
             print("请传入预设方案！")
             sys.exit()
         print("正在读取url...")
-        if not url:
+        if not self.url:
             print("请传入需要提交的url！")
             sys.exit()
         if not os.path.exists(str("hbsst_config.json")):
@@ -49,7 +51,7 @@ class main:
         print("正在保存url...")
         urls = open("urls.txt", mode = 'w')
         time.sleep(1)
-        urls.write(url)
+        urls.write(self.url)
         time.sleep(2)
         urls.close()
         time.sleep(1)
