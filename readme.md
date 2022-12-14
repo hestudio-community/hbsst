@@ -59,6 +59,12 @@ python3 -c "import hbsst;hbsst.submit(config='demo', url='https://www.example.co
 
 返回结果会保存在 `hbsst_return.json` 内，在执行命令是结果会直接输出人类可以看懂的文字。开发者可以通过获取success或error的存在状态来判断是否成功提交，可以通过获取error的值来获取错误码。有关 `hbsst_return.json` 的内容结构，你可以访问 https://ziyuan.baidu.com/linksubmit/index 获取。
 
+### 参与人员
+| 参与人员 | 参与项目 | 首次参与时间 | 最近一次参与时间 |
+| --- | --- | --- | --- |
+| [醉、倾城](https://www.hestudio.org/about) | hbsst.py主要开发者 | 2022.11.27 | 2022.12.14 |
+| emmm | 提出bug | 2022.12.14 | 2022.12.14 |
+
 ### 贡献
 你可以直接提交PR到本仓库。
 

@@ -3,81 +3,82 @@ import os
 import json
 import time
 
-SCRIPT_VERSION="202212130936"
+SCRIPT_VERSION="202212141346"
 
-def check():
-    print("""
-heStudio 百度搜索提交助手
+class __init__:
+    def __init__(self):
+        print("""
+    heStudio 百度搜索提交助手
 
-作者：醉、倾城
-博客：https://www.hestudio.org
+    作者：醉、倾城
+    博客：https://www.hestudio.org
 
-(C)Copyright heStudio 2021-2022
-    """)
-    print("验证版本...")
-    get_version = os.popen(str("curl https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/version.json"))
-    new_ver = json.load(get_version)
-    if not new_ver["version"] == SCRIPT_VERSION:
-        if SCRIPT_VERSION in new_ver["support"]:
-            print("你所使用的版本为旧版本，请及时更新，避免影响你的业务。")
-            print("更新内容：",new_ver["info"])
-            print("更新代码： “wget -O hbsst.py https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/hbsst.py”\n")
-            time.sleep(5)
-        else:
-            print("你所使用的版本过于老旧，请更新。")
-            print("更新内容：",new_ver["info"])
-            print("更新代码： “wget -O hbsst.py https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/hbsst.py”")
+    (C)Copyright heStudio 2021-2022
+        """)
+        print("验证版本...")
+        get_version = os.popen(str("curl https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/version.json"))
+        new_ver = json.load(get_version)
+        if not new_ver["version"] == SCRIPT_VERSION:
+            if SCRIPT_VERSION in new_ver["support"]:
+                print("你所使用的版本为旧版本，请及时更新，避免影响你的业务。")
+                print("更新内容：",new_ver["info"])
+                print("更新代码： “wget -O hbsst.py https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/hbsst.py”\n")
+                time.sleep(5)
+            else:
+                print("你所使用的版本过于老旧，请更新。")
+                print("更新内容：",new_ver["info"])
+                print("更新代码： “wget -O hbsst.py https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/hbsst.py”")
+                sys.exit()
+
+    def submit(self, config=None, url=None):
+        print("正在读取预设方案...")
+        if not config:
+            print("请传入预设方案！")
             sys.exit()
+        print("正在读取url...")
+        if not url:
+            print("请传入需要提交的url！")
+            sys.exit()
+        if not os.path.exists(str("hbsst_config.json")):
+            print("未找到配置文件！")
+            sys.exit()
+        config_db = json.load(open(str("hbsst_config.json")))
+        if not config_db[config]:
+            print("未找到预设方案！")
+            sys.exit()
+        print("正在保存url...")
+        urls = open("urls.txt", mode = 'w')
+        time.sleep(1)
+        urls.write(url)
+        time.sleep(2)
+        urls.close()
+        time.sleep(1)
+        print("正在推送...")
+        curl_return = os.popen(str("curl -H 'Content-Type:text/plain' --data-binary @urls.txt "+repr(config_db[config])))
+        curl_return_read = curl_return.read()
+        time.sleep(2)
+        print("正在接收返回结果...\n")
+        curl_return_json = open("hbsst_return.json", mode = 'w')
+        time.sleep(1)
+        curl_return_json.write(str(curl_return_read))
+        time.sleep(2)
+        curl_return_json.close()
+        time.sleep(1)
+        curl_return_data = json.load(open("hbsst_return.json"))
+        if "success" in curl_return_data:
+            print("成功推送的url条数：", curl_return_data["success"])
+        if "remain" in curl_return_data:
+            print("当天剩余的可推送url条数：", curl_return_data["remain"])
+        if "not_same_site" in curl_return_data:
+            print("由于不是本站url而未处理的url列表：", "\n")
+            for not_same in curl_return_data["not_same_site"]:
+                print("- ", not_same)
+        if "not_valid" in curl_return_data:
+            print("不合法的url列表：", "\n")
+            for not_valid in curl_return_data["not_valid"]:
+                print("- ", not_valid)
+        if "error" in curl_return_data:
+            print("错误码：", curl_return_data["error"])
+        if "message" in curl_return_data:
+            print("错误描述：", curl_return_data["message"])
 
-def submit(config=None, url=None):
-    check()
-    print("正在读取预设方案...")
-    if config == None:
-        print("请传入预设方案！")
-        sys.exit()
-    print("正在读取url...")
-    if url:
-        print("请传入需要提交的url！")
-        sys.exit()
-    if not os.path.exists(str("hbsst_config.json")):
-        print("未找到配置文件！")
-        sys.exit()
-    config_db = json.load(open(str("hbsst_config.json")))
-    if not config_db[config]:
-        print("未找到预设方案！")
-        sys.exit()
-    print("正在保存url...")
-    urls = open("urls.txt", mode = 'w')
-    time.sleep(1)
-    urls.write(url)
-    time.sleep(2)
-    urls.close()
-    time.sleep(1)
-    print("正在推送...")
-    curl_return = os.popen(str("curl -H 'Content-Type:text/plain' --data-binary @urls.txt "+repr(config_db[config])))
-    curl_return_read = curl_return.read()
-    time.sleep(2)
-    print("正在接收返回结果...\n")
-    curl_return_json = open("hbsst_return.json", mode = 'w')
-    time.sleep(1)
-    curl_return_json.write(str(curl_return_read))
-    time.sleep(2)
-    curl_return_json.close()
-    time.sleep(1)
-    curl_return_data = json.load(open("hbsst_return.json"))
-    if "success" in curl_return_data:
-        print("成功推送的url条数：", curl_return_data["success"])
-    if "remain" in curl_return_data:
-        print("当天剩余的可推送url条数：", curl_return_data["remain"])
-    if "not_same_site" in curl_return_data:
-        print("由于不是本站url而未处理的url列表：", "\n")
-        for not_same in curl_return_data["not_same_site"]:
-            print("- ", not_same)
-    if "not_valid" in curl_return_data:
-        print("不合法的url列表：", "\n")
-        for not_valid in curl_return_data["not_valid"]:
-            print("- ", not_valid)
-    if "error" in curl_return_data:
-        print("错误码：", curl_return_data["error"])
-    if "message" in curl_return_data:
-        print("错误描述：", curl_return_data["message"])
