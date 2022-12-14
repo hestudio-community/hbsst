@@ -5,7 +5,7 @@ import time
 
 SCRIPT_VERSION="202212141458"
 
-class main:
+class submit:
     def __init__(self, config=None, url=None):
         self.config = config
         self.url = url
@@ -32,7 +32,7 @@ class main:
                 print("更新代码： “wget -O hbsst.py https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/hbsst.py”")
                 sys.exit()
 
-    def submit(self):
+    def submit(self, config=None, url=None):
         print("正在读取预设方案...")
         if not self.config:
             print("请传入预设方案！")
