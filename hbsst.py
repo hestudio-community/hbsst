@@ -3,7 +3,7 @@ import os
 import json
 import time
 
-SCRIPT_VERSION="202212141510"
+SCRIPT_VERSION="202212141512"
 
 class main:
     def __init__(self, config=None, url=None):
@@ -56,7 +56,7 @@ heStudio 百度搜索提交助手
         urls.close()
         time.sleep(1)
         print("正在推送...")
-        curl_return = os.popen(str("curl -H 'Content-Type:text/plain' --data-binary @urls.txt "+repr(config_db[config])))
+        curl_return = os.popen(str("curl -H 'Content-Type:text/plain' --data-binary @urls.txt "+repr(config_db[self.config])))
         curl_return_read = curl_return.read()
         time.sleep(2)
         print("正在接收返回结果...\n")
