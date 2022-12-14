@@ -5,7 +5,7 @@ import time
 
 SCRIPT_VERSION="202212141346"
 
-class __init__:
+class __name__:
     def __init__(self):
         print("""
     heStudio 百度搜索提交助手
