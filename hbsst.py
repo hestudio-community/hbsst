@@ -3,19 +3,19 @@ import os
 import json
 import time
 
-SCRIPT_VERSION="202212141458"
+SCRIPT_VERSION="202212141503"
 
 class main:
     def __init__(self, config=None, url=None):
         self.config = config
         self.url = url
         print("""
-    heStudio 百度搜索提交助手
+heStudio 百度搜索提交助手
 
-    作者：醉、倾城
-    博客：https://www.hestudio.org
+作者：醉、倾城
+博客：https://www.hestudio.org
 
-    (C)Copyright heStudio 2021-2022
+(C)Copyright heStudio 2021-2022
         """)
         print("验证版本...")
         get_version = os.popen(str("curl https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/version.json"))
