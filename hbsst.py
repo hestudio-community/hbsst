@@ -3,7 +3,7 @@ import os
 import json
 import time
 
-SCRIPT_VERSION="202212141512"
+SCRIPT_VERSION="1.0.1"
 
 class main:
     def __init__(self, config=None, url=None):
@@ -24,12 +24,12 @@ heStudio 百度搜索提交助手
             if SCRIPT_VERSION in new_ver["support"]:
                 print("你所使用的版本为旧版本，请及时更新，避免影响你的业务。")
                 print("更新内容：",new_ver["info"])
-                print("更新代码： “wget -O hbsst.py https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/hbsst.py”\n")
+                print("更新代码： “pip install hbsst”\n")
                 time.sleep(5)
             else:
                 print("你所使用的版本过于老旧，请更新。")
                 print("更新内容：",new_ver["info"])
-                print("更新代码： “wget -O hbsst.py https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/hbsst.py”")
+                print("更新代码： “pip install hbsst”")
                 sys.exit()
 
     def submit(self):

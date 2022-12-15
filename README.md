@@ -5,7 +5,7 @@
 本工具由heStudio开发，你可以通过 https://www.hestudio.org/ 前往heStudio博客。
 
 ### 结构
-- `hbsst.py` (主程序)
+- `hbsst.py` (主程序, 隐藏)
 - `hbsst_config.json` (预设文件)
 - `hbsst_return.json` (系统返回值的文件)
 
@@ -14,10 +14,10 @@
 
 1.1. 你的设备需要安装Python 3，wget
 
-1.2. 下载主文件到工作文件夹
+1.2. 安装hbsst
 
 ```
-wget -O hbsst.py https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/hbsst.py
+pip install hbsst
 ```
 
 1.3. 在工作目录创建预设
