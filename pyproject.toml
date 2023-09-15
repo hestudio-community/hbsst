@@ -16,6 +16,6 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "hhttps://github.com/hestudio-community/hbsst"
+"Homepage" = "https://github.com/hestudio-community/hbsst"
 "Bug Tracker" = "https://github.com/hestudio-community/hbsst/issues"
 "Blog" = "https://www.hestudio.net/"
