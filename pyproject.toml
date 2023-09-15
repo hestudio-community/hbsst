@@ -1,10 +1,10 @@
 [project]
 name = "hbsst"
-version = "1.0.1"
+version = "1.0.2"
 authors = [
-  { name="heStudio", email="hestudio@hestudio.org" },
+  { name="heStudio", email="hestudio@hestudio.net" },
 ]
-description = "本工具将百度站长API提交的命令集成优化，改成利于使用的Python函数，方便程序调用。"
+description = "This tool integrates and optimizes the commands submitted by Baidu webmaster API, and changes them into user-friendly Python functions to facilitate program calls."
 readme = "README.md"
 requires-python = ">=3.6"
 classifiers = [
@@ -16,6 +16,6 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://gitee.com/heStudio/baidu-search-submission-tool/"
-"Bug Tracker" = "https://www.hestudio.org/get-help"
-"Blog" = "https://www.hestudio.org/"
+"Homepage" = "hhttps://github.com/hestudio-community/hbsst"
+"Bug Tracker" = "https://github.com/hestudio-community/hbsst/issues"
+"Blog" = "https://www.hestudio.net/"

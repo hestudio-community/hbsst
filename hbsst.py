@@ -3,7 +3,7 @@ import os
 import json
 import time
 
-SCRIPT_VERSION="1.0.1"
+SCRIPT_VERSION="1.0.2"
 
 class main:
     def __init__(self, config=None, url=None):
@@ -13,12 +13,12 @@ class main:
 heStudio 百度搜索提交助手
 
 作者：醉、倾城
-博客：https://www.hestudio.org
+博客：https://www.hestudio.net
 
-(C)Copyright heStudio 2021-2022
+(C)Copyright heStudio 2021-2023
         """)
         print("验证版本...")
-        get_version = os.popen(str("curl https://gitee.com/heStudio/baidu-search-submission-tool/raw/master/version.json"))
+        get_version = os.popen(str("curl https://raw.githubusercontent.com/hestudio-community/hbsst/master/version.json"))
         new_ver = json.load(get_version)
         if not new_ver["version"] == SCRIPT_VERSION:
             if SCRIPT_VERSION in new_ver["support"]:

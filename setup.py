@@ -3,10 +3,10 @@
 from distutils.core import setup
 
 setup(name='hbsst',
-      version='1.0.1',
-      description='本工具将百度站长API提交的命令集成优化，改成利于使用的Python函数，方便程序调用。',
+      version='1.0.2',
+      description='This tool integrates and optimizes the commands submitted by Baidu webmaster API, and changes them into user-friendly Python functions to facilitate program calls.',
       author='heStudio',
-      author_email='hestudio@hestudio.org',
-      url='https://gitee.com/heStudio/baidu-search-submission-tool/',
+      author_email='hestudio@hestudio.net',
+      url='https://github.com/hestudio-community/hbsst',
       packages=[''],
      )

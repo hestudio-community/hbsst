@@ -2,7 +2,7 @@
 
 本工具将百度站长API提交的命令集成优化，改成利于使用的Python函数，方便程序调用。
 
-本工具由heStudio开发，你可以通过 https://www.hestudio.org/ 前往heStudio博客。
+本工具由heStudio开发，你可以通过 https://www.hestudio.net/ 前往heStudio博客。
 
 ### 结构
 - `hbsst.py` (主程序, 隐藏)
@@ -59,11 +59,6 @@ python3 -c "import hbsst;hbsst.submit(config='demo', url='https://www.example.co
 
 返回结果会保存在 `hbsst_return.json` 内，在执行命令是结果会直接输出人类可以看懂的文字。开发者可以通过获取success或error的存在状态来判断是否成功提交，可以通过获取error的值来获取错误码。有关 `hbsst_return.json` 的内容结构，你可以访问 https://ziyuan.baidu.com/linksubmit/index 获取。
 
-### 参与人员
-| 参与人员 | 参与项目 | 首次参与时间 | 最近一次参与时间 |
-| --- | --- | --- | --- |
-| [醉、倾城](https://www.hestudio.org/about) | hbsst.py主要开发者 | 2022.11.27 | 2022.12.14 |
-| emmm | 提出bug | 2022.12.14 | 2022.12.14 |
 
 ### 贡献
 你可以直接提交PR到本仓库。
@@ -71,7 +66,7 @@ python3 -c "import hbsst;hbsst.submit(config='demo', url='https://www.example.co
 ### 反馈&建议
 你可以使用以下方法：
 - 向本仓库提交Issue
-- 在 [heStudio Talking](https://www.hestudio.org/talking) 提交：https://www.hestudio.org/talking
+- 在 [heStudio Talking](https://www.hestudio.net/talking) 提交：https://www.hestudio.net/talking
 
 ### 赞助
-https://afdian.net/a/hestudio
+https://www.hestudio.net/donate/
